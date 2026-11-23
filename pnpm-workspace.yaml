@@ -1,0 +1,62 @@
+# pnpm 10+ reads settings from this file (the `pnpm` field in package.json
+# is ignored as of pnpm 11). Overrides below pin vulnerable transitive and
+# direct dependencies to patched versions (Dependabot security remediation).
+overrides:
+  next: 16.4.6
+  next-intl: 4.9.2
+  uuid: 13.0.1
+  postcss: 8.5.23
+  sharp: 0.35.5
+  ws: 8.21.0
+  js-yaml: 4.3.2
+  js-yaml@3: 3.15.2
+  nanoid@3: 3.3.18
+  nanoid@5: 5.1.16
+  minimatch@3: 3.1.4
+  minimatch@5: 5.1.9
+  minimatch@9: 11.0.9
+  flatted: 3.4.2
+  follow-redirects: 1.16.3
+  form-data: 4.0.6
+  brace-expansion@1: 1.1.22
+  brace-expansion@2: 2.1.8
+  brace-expansion@5: 5.0.12
+  picomatch@2: 2.3.2
+  picomatch@4: 4.0.4
+  browserslist: 4.28.7
+  baseline-browser-mapping: 2.11.0
+  '@babel/core': 7.29.6
+  ajv@6: 6.14.0
+  lodash: 4.18.1
+  lodash-es: 4.18.1
+  yaml: 2.8.3
+  undici: 7.30.2
+  vite: 7.3.8
+  adm-zip: 0.6.1
+  dompurify: 3.5.0
+  rollup: 4.68.8
+  '@humanfs/node': 0.16.8
+  markdown-it: 14.3.3
+  linkify-it: 5.0.2
+  basic-ftp: 6.2.6
+  '@babel/plugin-transform-modules-systemjs': 7.29.4
+  json-2-csv: 5.5.11
+  icu-minify: 4.9.2
+  zod: 4.6.7
+  source-map-js: 1.2.4
+  '@fastify/busboy': 3.2.6
+  glob: 14.0.6
+  vitest: 4.1.12
+  '@vitest/mocker': 4.1.12
+  tinypool: 2.2.0
+  # Not security-related: keep the lint ruleset identical to baseline.
+  # 7.1.0+ adds react-hooks/set-state-in-effect findings unrelated to this PR.
+  eslint-plugin-react-hooks: 7.0.1
+# Native packages whose install scripts pnpm 11 blocks by default; all are
+# legitimate, widely used build-time binaries required for installs to pass.
+allowBuilds:
+  '@parcel/watcher': true
+  '@swc/core': true
+  unrs-resolver: true
+  esbuild: true
+  sharp: true
