@@ -2,6 +2,7 @@
 # is ignored as of pnpm 11). Overrides below pin vulnerable transitive and
 # direct dependencies to patched versions (Dependabot security remediation).
 overrides:
+  i18next: 26.3.4
   next: 16.4.6
   next-intl: 4.9.2
   uuid: 13.0.1
