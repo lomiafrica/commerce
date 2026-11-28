@@ -237,7 +237,8 @@ export async function POST(request: Request) {
 
     if (rpcError) {
       console.error(
-        `lomi. Webhook Error: Failed to call record_order_payment RPC for order ${orderId}:`,
+        'lomi. Webhook Error: Failed to call record_order_payment RPC for order:',
+        orderId,
         rpcError
       );
       return new Response(
@@ -277,7 +278,8 @@ export async function POST(request: Request) {
 
         if (!emailResponse.ok) {
           console.error(
-            `❌ lomi. Webhook: Error triggering order-confirmation for ${orderId}:`,
+            '❌ lomi. Webhook: Error triggering order-confirmation for order:',
+            orderId,
             {
               status: emailResponse.status,
               statusText: emailResponse.statusText,
@@ -300,7 +302,8 @@ export async function POST(request: Request) {
           }
         } else {
           console.log(
-            `✅ lomi. Webhook: Successfully triggered order-confirmation for ${orderId}:`,
+            '✅ lomi. Webhook: Successfully triggered order-confirmation for order:',
+            orderId,
             emailResult
           );
         }
@@ -314,7 +317,8 @@ export async function POST(request: Request) {
         const errorStack =
           functionError instanceof Error ? functionError.stack : undefined;
         console.error(
-          `❌ lomi. Webhook: Exception calling order-confirmation for ${orderId}:`,
+          '❌ lomi. Webhook: Exception calling order-confirmation for order:',
+          orderId,
           functionError
         );
         console.error(`❌ Function Error Details:`, {
